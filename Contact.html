@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Tech Aid, REQUEST SUPPORT">
+    <meta name="description" content="">
+    <title>Contact</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="Contact.css" media="screen">
+    <meta name="generator" content="Nicepage 5.4.4, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Contact">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <script>
+    function gdprConfirmed() {
+        return true;
+    }
+    function dynamicLoadScript() {
+        var script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js?render=6LdNmTgkAAAAAO-9h-exfMlDEqZDHSFmZ_NPj2eB';
+        script.async = true;
+        document.body.appendChild(script);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        var confirmButton = document.querySelector('.u-cookies-consent .u-button-confirm');
+        if (confirmButton) {
+            confirmButton.onclick = dynamicLoadScript;
+        }
+    });
+    </script>
+    <script>
+    if (gdprConfirmed()) {
+        document.write("<sc" + "ript src=\"https://www.google.com/recaptcha/api.js?render=6LdNmTgkAAAAAO-9h-exfMlDEqZDHSFmZ_NPj2eB\"></sc" + "ript>");
+    }
+    </script>
+    <script>
+    if (gdprConfirmed()) {
+        (function (grecaptcha, sitekey, actions) {
+            var recaptcha = {
+                execute: function (action, submitFormCb) {
+                    try {
+                        grecaptcha.execute(
+                            sitekey,
+                            {action: action}
+                        ).then(function (token) {
+                            var forms = document.getElementsByTagName('form');
+
+                            for (var i = 0; i < forms.length; i++) {
+                                var fields = forms[i].getElementsByTagName('input');
+
+                                for (var j = 0; j < fields.length; j++) {
+                                    var field = fields[j];
+
+                                    if ('recaptchaResponse' === field.getAttribute('name')) {
+                                        field.setAttribute('value', token);
+                                        break;
+                                    }
+                                }
+                            }
+                            submitFormCb();
+                        });
+                    } catch (e) {
+                        var formError = document.querySelector('.u-form-send-error');
+
+                        if (formError) {
+                            formError.innerText = 'Site Owner Error: ' + e.message.replace(/:[\s\S]*/, '');
+                            formError.style.display = 'block';
+                        }
+                    }
+                },
+
+                executeContact: function (submitFormCb) {
+                    recaptcha.execute(actions['contact'], submitFormCb);
+                }
+            };
+
+            window.recaptchaObject = recaptcha;
+        })(
+            grecaptcha,
+            
+            '6LdNmTgkAAAAAO-9h-exfMlDEqZDHSFmZ_NPj2eB',
+            {'contact': 'contact'}
+        );
+    }
+    </script>
+<meta data-intl-tel-input-cdn-path="intlTelInput/">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      const publicKey = 'SheTWXOnL46Y5NI0_';
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init(publicKey);
+        })();
+    </script>
+    <script type="text/javascript">
+      const serviceID = 'service_2umdvk8';
+      const templateID = 'template_7hnnhyf';
+
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                this.contact_number.value = Math.random() * 100000 | 0;
+                // these IDs from the previous steps
+                emailjs.sendForm(serviceID, templateID, this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                        window.location.href = "ContactSuccess.html";
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+</head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-15e6"><div class="u-clearfix u-sheet u-sheet-1">
+        <h1 class="header-text u-text u-text-default u-text-palette-1-base u-text-1">
+          <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1" href="Home.html">Tech Solve&nbsp;</a>
+        </h1>
+        <p class="u-align-center u-text u-text-black u-text-default u-text-2">NORTHEAST OHIO</p>
+</div></header>
+<style>
+main {
+  background-color: rgb(215, 239, 250);
+  padding: 50px;
+}
+main form {
+  width: 400px;
+  background-color: rgb(255, 255, 255);
+  margin: 50px auto 150px auto;
+  border-radius: 35px;
+  padding: 25px 10px 30px 0;
+}
+input, textarea {
+  width: 80%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 35px;
+}
+label {
+  padding-left: 25px;
+}
+</style>
+    <main>
+      <form id="contact-form">
+        <input type="hidden" name="contact_number">
+        <input type="hidden" name="name"><br>
+        <label>Name</label><br>
+        <input type="text" name="email"><br>
+        <label>Email</label><br>
+        <input type="text" name="number"><br>
+        <label>Phone Number</label><br>
+        <input type="text" name="number"><br>
+        <label>How Should We Contact You</label><br>
+        <input type="text" name="method"><br>
+        <label>Briefly Describe Your issue</label><br>
+        <textarea name="message"></textarea><br>
+        <a href="ContactSuccess.html"><input type="submit" value="Submit" onclick=""></form></a>
+    </form>
+    </main>
+
+
+
+
+    
+    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-3f6d"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <p class="u-small-text u-text u-text-variant u-text-1">Tech Solve Copyright 2023</p>
+      </div></footer>
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+        <span></span>
+      </a>
+      <p class="u-text">
+        <span></span>
+      </p>
+      <a class="u-link" href="" target="_blank">
+        <span></span>
+      </a>
+    </section>
+  
+</body></html>
